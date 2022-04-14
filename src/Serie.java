@@ -1,12 +1,15 @@
+import java.util.Arrays;
+
 public class Serie {
     private String titulo;
     private int numCapitulos;
     private char genero;
     private String guionista;
-    private String actores; //En el set y get también hay que poner corchetes en el array
+    private String actores[]; //En el set y get también hay que poner corchetes en el array
     private float precio;
 
     /****************************CONSTRUCTORES***************/
+
     Serie() {
     }
 
@@ -15,12 +18,12 @@ public class Serie {
         this.guionista=guionista;
     }
 
-    Serie (String titulo,int numCapitulos,char genero,String guionista,String actores,float precio) {
+    Serie (String titulo,int numCapitulos,char genero,String guionista,String actores [],float precio) {
         this.titulo=titulo;
         this.numCapitulos=numCapitulos;
         this.genero=genero;
         this.guionista=guionista;
-        this.actores=actores;
+        this.actores= actores;
         this.precio=precio;
     }
 
@@ -41,7 +44,7 @@ public class Serie {
         this.guionista=guionista;
     }
 
-    public void setActores (String actores) {
+    public void setActores (String actores[]) {
         this.actores=actores;
     }
 
@@ -66,12 +69,19 @@ public class Serie {
         return guionista;
     }
 
-    public String getActores() {
+    public String [] getActores() {
         return actores;
     }
 
     public float getPrecio() {
         return precio;
+    }
+
+
+    /****************************toString*********************/
+    public String toString() //cómo detecta qué pintar por pantalla
+    {
+        return "La película es " + titulo + " del género " + genero + " con " + numCapitulos + " capitulos, " + "el guionista es " + guionista + " y los actores son: " + Arrays.toString(actores) + " con un precio de " + precio;
     }
 
 }
