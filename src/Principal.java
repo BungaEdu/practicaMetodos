@@ -1,3 +1,5 @@
+import org.apache.groovy.contracts.common.impl.ClassInvariantAnnotationProcessor;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -33,6 +35,7 @@ public class Principal {
         objeto3.setGenero(genero);
 
         System.out.print("Guionista: \n");
+
         String guionista = sc.nextLine();
         objeto3.setGuionista(guionista);
 
@@ -40,6 +43,19 @@ public class Principal {
         for (int i=0;i< actores.length;i++) {
             actores [i]= sc.nextLine();
             objeto3.setActores(actores);
+            /*TODO C: tienes que meter datos y cuando no quieres sehir sólo tienes que meter el retorno
+            Actor 1: Tom cruise
+            Actor 2: Ariana
+            Actor 3: ""
+            Es decir, meto la cadena vacía
+            La cadena vacía vale con el tamaño de cadena=0 o con el equals*/
+            //TODO C:el bucle es:
+             /*do {
+                 System.out.println("Actor: ");
+                 s1.getActores()[i] = sc.nextLine();
+                 retorno = sc.nextLine();
+                     i++;
+             } while (!retorno.equalsIgnoreCase("") && i< serie.MAXACTORS);*/
         }
 
         System.out.print("Precio: ");
@@ -49,3 +65,15 @@ public class Principal {
         System.out.println(objeto3);
     }
 }
+
+
+/*TODO: CRITERIOS:
+- Atributos por defecto 1/1.
+- Cada constructor 1 punto: 1/3.
+- metodo get 1 punto, metodo set 1 punto: 2/2
+- Metodo princial, generado todos los objetos: 1/1;
+- He modificado todos los objectos: 1/1;
+- He impreso el objeto por pantalla: 1/1;
+- He pedido a los actores bien: 0/1;
+- Entregado en plazo 1 punto extra: 1/1;
+ */
